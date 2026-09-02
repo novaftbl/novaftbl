@@ -1,56 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOVAFTBL__ — Follow on TikTok</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="bg-grid"></div>
-  <div class="orb orb-a"></div>
-  <div class="orb orb-b"></div>
-
-  <nav class="nav">
-    <a class="brand" href="index.html">NOVA<span>FTBL__</span></a>
-    <a class="circle-btn small" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noopener">↗</a>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="eyebrow">FOOTBALL CONTENT // ONLINE</div>
-      <h1>NOVA<span>FTBL__</span></h1>
-      <p class="lead">Football edits. Big moments. One account worth following.</p>
-
-      <a class="follow-btn" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noopener">
-        <span>FOLLOW TIKTOK</span><span class="arrow">↗</span>
-      </a>
-
-      <div class="handle">@novaftbl__</div>
-
-      <div class="buttons">
-        <a class="circle-btn" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noopener" aria-label="TikTok">♪</a>
-        <a class="circle-btn" href="#about" aria-label="About">i</a>
-        <a class="circle-btn" href="#follow" aria-label="Follow">+</a>
-      </div>
-    </section>
-
-    <section id="about" class="panel">
-      <div>
-        <div class="eyebrow">WHY FOLLOW?</div>
-        <h2>STAY IN THE<br>NOVAFTBL__ LOOP.</h2>
-      </div>
-      <p>Discover football edits, player moments and fresh content from NOVAFTBL__. Tap the button and follow on TikTok.</p>
-    </section>
-
-    <section id="follow" class="follow-panel">
-      <div class="eyebrow">DESTINATION</div>
-      <h2>@novaftbl__</h2>
-      <a class="text-link" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noopener">FOLLOW TIKTOK ↗</a>
-    </section>
-  </main>
-
-  <footer>NOVAFTBL__ <span>×</span> FOOTBALL</footer>
-  <script src="js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080812" />
+    <title>NOVAFTBL__ — TikTok</title>
+    <style>
+      :root { --ink:#f5f5fb; --muted:#9b9bae; --bg:#080812; --hot:#e95cff; --blue:#52ddff; --line:rgba(255,255,255,.12); }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; overflow-x:hidden; color:var(--ink); background:var(--bg); font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, sans-serif; }
+      .noise { position:fixed; inset:0; pointer-events:none; z-index:10; opacity:.055; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E"); }
+      .grid { position:fixed; inset:0; z-index:-2; background:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px); background-size:54px 54px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+      .glow { position:fixed; z-index:-1; width:55vw; height:55vw; border-radius:50%; filter:blur(110px); opacity:.19; }
+      .glow.one { background:var(--hot); top:-25vw; right:-17vw; }.glow.two { background:var(--blue); bottom:-25vw; left:-25vw; }
+      nav { height:86px; display:flex; align-items:center; justify-content:space-between; max-width:1260px; margin:auto; padding:0 32px; }
+      .wordmark { letter-spacing:-.08em; font-size:21px; font-weight:800; }.wordmark i { color:var(--hot); font-style:normal; }
+      .nav-link, .pill { border:1px solid var(--line); color:var(--ink); border-radius:999px; text-decoration:none; padding:12px 18px; font-size:14px; font-weight:650; transition:.25s ease; }
+      .nav-link:hover,.pill:hover { background:var(--ink); color:#090910; border-color:var(--ink); transform:translateY(-2px); }
+      main { max-width:1260px; margin:auto; padding:66px 32px 38px; }
+      .eyebrow { display:flex; gap:10px; align-items:center; color:var(--blue); font-size:12px; font-weight:750; letter-spacing:.12em; text-transform:uppercase; }.pulse { width:8px;height:8px;border-radius:50%;background:var(--blue); box-shadow:0 0 16px var(--blue); animation:pulse 1.4s infinite; }
+      h1 { max-width:920px; margin:25px 0 25px; font-size:clamp(61px,10.1vw,147px); line-height:.83; letter-spacing:-.085em; font-weight:800; }.accent { color:var(--hot); text-shadow:0 0 34px rgba(233,92,255,.52); }
+      .intro { max-width:480px; color:var(--muted); font-size:17px; line-height:1.55; letter-spacing:-.015em; }.intro strong { color:var(--ink); }
+      .actions { display:flex; gap:12px; margin:34px 0 75px; flex-wrap:wrap; }.pill.primary { color:#15091a; border-color:var(--hot); background:var(--hot); box-shadow:0 12px 35px rgba(233,92,255,.23); }.pill.primary:hover { background:#fff; border-color:#fff; }
+      .feed-header { display:flex; justify-content:space-between; align-items:end; border-top:1px solid var(--line); padding-top:20px; }.feed-header h2 { margin:0; font-size:13px; letter-spacing:.1em; text-transform:uppercase; }.feed-header span { color:var(--muted); font-size:13px; }
+      .reels { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px; }.reel { position:relative; min-height:455px; overflow:hidden; border-radius:28px; background:#11111c; border:1px solid rgba(255,255,255,.11); isolation:isolate; transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .25s; }.reel:hover { transform:translateY(-8px); border-color:rgba(255,255,255,.35); }.reel::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 32%,rgba(0,0,0,.88)); z-index:1; }
+      .art { position:absolute; inset:0; overflow:hidden; background-size:cover; background-position:center; transition:transform .5s ease; }.reel:hover .art { transform:scale(1.045); }.art::before,.art::after { content:""; position:absolute; border-radius:50%; filter:blur(3px); }.r1 .art { background:linear-gradient(145deg,#28203b,#091629 62%,#a40097); }.r1 .art::before { width:310px;height:310px;background:#f228f8;top:-100px;right:-90px;box-shadow:0 0 100px #e600ff; }.r1 .art::after { width:170px;height:400px;background:#29d7ff;bottom:-100px;left:35%; transform:rotate(35deg); box-shadow:0 0 70px #29d7ff; }
+      .r2 .art { background:linear-gradient(155deg,#13091f,#080b24 55%,#035466); }.r2 .art::before { width:430px;height:170px;background:#5ff2ff;top:7%;left:-30%;box-shadow:0 0 100px #47dcff; }.r2 .art::after { width:250px;height:250px;background:#a73aff;bottom:-120px;right:-30px;box-shadow:0 0 100px #a73aff; }.r3 .art { background:radial-gradient(circle at 78% 13%,#fc86de,transparent 23%),linear-gradient(130deg,#48022f,#15041f 50%,#090d1d); }.r3 .art::before { width:440px;height:68px;background:#ff48c9;top:46%;left:-20%;transform:rotate(-35deg);box-shadow:0 0 75px #ff20ba; }.r3 .art::after { width:340px;height:340px;background:#3659ff;top:30%;right:-170px;box-shadow:0 0 90px #3659ff; }
+      .scan { position:absolute; inset:0; opacity:.19; background:repeating-linear-gradient(0deg,transparent 0 4px,rgba(255,255,255,.28) 5px); mix-blend-mode:overlay; }.caption { position:absolute; left:22px; bottom:21px; z-index:2; right:16px; }.caption p { font-weight:700; font-size:18px; margin:0 0 9px; letter-spacing:-.04em; }.caption small { color:#d1ceda; font-size:12px; }.play { position:absolute; top:20px; right:20px; z-index:2; width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(12px);font-size:14px; }
+      .ticker { display:flex; overflow:hidden; white-space:nowrap; margin:80px -32px 0; border-block:1px solid var(--line); transform:rotate(-1.5deg); background:rgba(8,8,18,.86); }.ticker span { padding:16px 0; font-size:14px; font-weight:750; letter-spacing:.08em; animation:scroll 20s linear infinite; }.ticker b { padding:0 25px; color:var(--hot); }
+      footer { max-width:1260px;margin:auto;padding:93px 32px 34px;display:flex;justify-content:space-between;align-items:end;gap:20px; } footer h3 { font-size:clamp(33px,5vw,61px);letter-spacing:-.07em;line-height:.9;margin:0;max-width:510px; } footer small { color:var(--muted); }
+      @keyframes pulse { 50% { transform:scale(.55); opacity:.5; } } @keyframes scroll { to { transform:translateX(-50%); } }
+      @media (max-width:700px) { nav,main,footer { padding-left:20px;padding-right:20px; } nav { height:72px; }.nav-link {padding:10px 14px;font-size:12px;} main { padding-top:48px;} h1 { font-size:clamp(57px,17vw,92px); }.reels { grid-template-columns:1fr; }.reel { min-height:390px; }.ticker { margin-left:-20px;margin-right:-20px;} footer { padding-top:70px;flex-direction:column;align-items:flex-start; } }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div><div class="glow one"></div><div class="glow two"></div><div class="noise"></div>
+    <nav><div class="wordmark">NOVA<i>FTBL</i>__</div><a class="nav-link" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noreferrer">Follow on TikTok ↗</a></nav>
+    <main>
+      <div class="eyebrow"><span class="pulse"></span> Football after dark</div>
+      <h1>THE GAME,<br><span class="accent">REWIRED.</span></h1>
+      <p class="intro">Cinematic football edits, iconic moments, and <strong>zero ordinary energy.</strong> Enter the feed of novaftbl__.</p>
+      <div class="actions"><a class="pill primary" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noreferrer">Open TikTok&nbsp; ↗</a><a class="pill" href="#drops">Explore drops ↓</a></div>
+      <section id="drops"><div class="feed-header"><h2>Latest transmissions</h2><span>@novaftbl__ / 2025</span></div>
+        <div class="reels">
+          <a class="reel r1" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noreferrer"><div class="art"></div><div class="scan"></div><span class="play">▶</span><div class="caption"><p>When the lights go out.</p><small>EDIT_001 — 00:14</small></div></a>
+          <a class="reel r2" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noreferrer"><div class="art"></div><div class="scan"></div><span class="play">▶</span><div class="caption"><p>Different kind of pace.</p><small>EDIT_002 — 00:18</small></div></a>
+          <a class="reel r3" href="https://www.tiktok.com/@novaftbl__" target="_blank" rel="noreferrer"><div class="art"></div><div class="scan"></div><span class="play">▶</span><div class="caption"><p>Built for the moment.</p><small>EDIT_003 — 00:11</small></div></a>
+        </div>
+      </section>
+      <div class="ticker"><span>FOOTBALL / FUTURE / CULTURE <b>✦</b> FOOTBALL / FUTURE / CULTURE <b>✦</b> FOOTBALL / FUTURE / CULTURE <b>✦</b> FOOTBALL / FUTURE / CULTURE <b>✦</b></span></div>
+    </main>
+    <footer><h3>SEE YOU ON<br><span class="accent">THE FOR YOU.</span></h3><small>© NOVAFTBL__ · MADE FOR THE GAME</small></footer>
+    <script>
+      const duration = seconds => `${Math.floor((seconds || 0) / 60)}:${String((seconds || 0) % 60).padStart(2, "0")}`;
+      fetch("/api/latest")
+        .then(response => response.ok ? response.json() : Promise.reject())
+        .then(({ videos }) => {
+          document.querySelectorAll(".reel").forEach((card, index) => {
+            const video = videos[index]; if (!video) return;
+            const art = card.querySelector(".art");
+            if (video.cover_image_url) { art.style.backgroundImage = `url("${video.cover_image_url}")`; art.classList.add("live"); }
+            card.href = video.share_url || video.embed_link || card.href;
+            card.querySelector(".caption p").textContent = video.title || video.video_description || "New transmission.";
+            card.querySelector("small").textContent = `LATEST EDIT — ${duration(video.duration)}`;
+          });
+          document.querySelector(".feed-header span").textContent = "@novaftbl__ / LIVE FEED";
+        })
+        .catch(() => {}); // Keeps the designed fallback cards during local previews or an API outage.
+    </script>
+  </body>
 </html>
