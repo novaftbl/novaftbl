@@ -1,0 +1,23 @@
+@font-face{font-family:SF;src:local("SF Pro Display"),local("SF Pro Text"),local("-apple-system");}
+:root{--bg:#050508;--fg:#f5f5f7;--muted:#9898a5;--cyan:#00eaff;--pink:#ff21d4;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:SF,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+.bg-grid{position:fixed;inset:0;z-index:-3;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:55px 55px;transform:perspective(600px) rotateX(62deg) scale(2);transform-origin:center bottom;mask-image:linear-gradient(to top,#000,transparent 75%);animation:grid 9s linear infinite}
+@keyframes grid{to{background-position:0 55px}}
+.orb{position:fixed;width:420px;height:420px;border-radius:50%;filter:blur(110px);opacity:.16;z-index:-2}.orb-a{background:var(--cyan);top:-220px;left:-180px}.orb-b{background:var(--pink);right:-220px;bottom:-180px}
+.nav{position:fixed;top:0;left:0;right:0;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;background:#050508b8;backdrop-filter:blur(20px);border-bottom:1px solid #fff1;z-index:10}
+.brand{color:white;text-decoration:none;font-weight:800;letter-spacing:2px}.brand span,h1 span{color:var(--cyan);text-shadow:0 0 22px #00eaff66}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:120px 6% 80px}
+.eyebrow{font-size:11px;letter-spacing:4px;color:var(--cyan);font-weight:700;margin-bottom:22px}
+h1{font-size:clamp(58px,12vw,150px);line-height:.88;letter-spacing:-6px;margin:0;font-weight:900}
+.lead{max-width:620px;color:var(--muted);font-size:clamp(17px,2vw,21px);line-height:1.6;margin:32px auto}
+.follow-btn{display:inline-flex;align-items:center;gap:30px;padding:17px 20px 17px 28px;border-radius:999px;background:var(--fg);color:#050508;text-decoration:none;font-weight:800;letter-spacing:.4px;transition:.3s;box-shadow:0 0 35px #00eaff25}
+.follow-btn:hover{transform:scale(1.05);box-shadow:0 0 55px #00eaff55}.arrow{width:36px;height:36px;border-radius:50%;background:#050508;color:white;display:grid;place-items:center}
+.handle{margin-top:20px;color:#777784;font-size:14px}.buttons{display:flex;gap:14px;margin-top:42px}
+.circle-btn{width:58px;height:58px;border:1px solid #fff2;border-radius:50%;display:grid;place-items:center;color:white;text-decoration:none;background:#ffffff08;backdrop-filter:blur(12px);font-size:21px;transition:.3s}
+.circle-btn:hover{border-color:var(--cyan);box-shadow:0 0 28px #00eaff35;transform:translateY(-5px)}.circle-btn.small{width:42px;height:42px;font-size:16px}
+.panel,.follow-panel{width:min(1100px,88%);margin:40px auto 130px;padding:55px;border:1px solid #fff1;border-radius:30px;background:#ffffff05;backdrop-filter:blur(16px);display:grid;grid-template-columns:1.2fr .8fr;gap:50px}
+h2{font-size:clamp(34px,5vw,65px);line-height:.95;letter-spacing:-3px;margin:0}.panel p{color:var(--muted);line-height:1.8;margin:0;font-size:17px;align-self:end}
+.follow-panel{display:block;text-align:center}.follow-panel h2{margin-bottom:25px}.text-link{color:var(--cyan);text-decoration:none;font-weight:700;letter-spacing:1px}
+footer{text-align:center;padding:35px;color:#666674;font-size:11px;letter-spacing:3px}footer span{color:var(--cyan)}
+@media(max-width:700px){h1{letter-spacing:-4px}.panel{grid-template-columns:1fr;padding:32px;gap:30px}.follow-btn{gap:15px}.nav{padding:18px 5%}}
